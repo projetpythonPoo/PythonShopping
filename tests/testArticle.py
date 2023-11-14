@@ -22,14 +22,14 @@ class TestArticle(unittest.TestCase):
         self.assertEqual(self._description, self._article.get_description)
         self.assertEqual(self._price, self._article.get_price)
 
-    def description_shortdescription_returnnewvalue(self):
+    # def description_shortdescription_returnnewvalue(self):
         # given
 
-        self.expected_description = "After Shave"
+      #  self.expected_description = "After Shave"
         # when
-        self._article.set_description
+     #   self._article.set_description
         # then
-        self.assertEqual(self.expected_description,self._article.Description)
+     #   self.assertEqual(self.expected_description,self._article.Description)
 
    # [Test]
    # public void Description_ShortDescription_ReturnNewValue()

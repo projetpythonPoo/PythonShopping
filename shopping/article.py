@@ -5,16 +5,17 @@ class Article:
         self._description = description
         self._price = price
 
+    @property
     def get_id(self):
         return self._id
 
+    @property
     def get_description(self):
         return self._description
 
     def set_description(self, value):
         self._description = value
 
+    @property
     def get_price(self):
         return self._price
-
-    prop = property(get_id, get_description, set_description, get_price)
