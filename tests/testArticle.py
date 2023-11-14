@@ -25,12 +25,45 @@ class TestArticle(unittest.TestCase):
 
     def test_description_short_description_return_new_value(self):
         # given
-
         self.expected_description = "After Shave"
         # when
         self._article.description = self.expected_description
         # then
         self.assertEqual(self._article.description, self.expected_description)
+
+    def test_description_long_description_return_new_value(self):
+        # given
+        self.expected_description = "A very long long long long long long descriptionn"
+        # when
+        self._article.description = self.expected_description
+        # then
+        self.assertEqual(self._article.description, self.expected_description)
+
+    def test_description_single_word_description_throw_exception(self):
+        # given
+
+        # when
+        with self.assertRaises(Article.TooShortDescriptionException):
+            self._article.description = "TooShort"
+        # then
+        # throw exception
+
+    def test_description_descriptioncontainingspecialchars_throwexception(self):
+        # given
+
+        # when
+        with self.assertRaises(Article.SpecialCharInDescriptionException):
+            self._article.description = "Jacques+Daniel"
+        # then
+        # throw exception
+
+    def test_description_toolongdescription_throwexception(self):
+        # given
+        # when
+        with self.assertRaises(Article.TooLongDescriptionException):
+            self._article.description = "A very very very very very looonnng descriptioooooon"
+        # then
+        # throw exception
 
 
 if __name__ == '__main__':

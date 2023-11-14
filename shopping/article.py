@@ -20,3 +20,15 @@ class Article:
     @property
     def price(self):
         return self._price
+
+    class ArticleException(Exception):
+        pass
+
+    class TooShortDescriptionException(ArticleException):
+        pass
+
+    class SpecialCharInDescriptionException(ArticleException):
+        pass
+
+    class TooLongDescriptionException(ArticleException):
+        pass
